@@ -15,23 +15,23 @@ public class AddressBookService {
     @Autowired
     private AddressBookRepository repository;
 
-    // Save an entry (DTO -> Entity)
+    // Create a new entry (DTO -> Entity)
     public AddressBook saveEntry(AddressBookDTO dto) {
         AddressBook addressBook = new AddressBook(dto);
         return repository.save(addressBook);
     }
 
-    // Get all entries
+    // Retrieve all entries
     public List<AddressBook> getAllEntries() {
         return repository.findAll();
     }
 
-    // Get entry by ID
+    // Retrieve entry by ID
     public Optional<AddressBook> getEntryById(Long id) {
         return repository.findById(id);
     }
 
-    // Update an entry
+    // Update an existing entry
     public AddressBook updateEntry(Long id, AddressBookDTO newEntry) {
         return repository.findById(id)
                 .map(entry -> {

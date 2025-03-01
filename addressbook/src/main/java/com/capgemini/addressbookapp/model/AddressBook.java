@@ -21,7 +21,7 @@ public class AddressBook {
     private String email;
     private String address;
 
-    // Constructor to convert DTO to Entity
+    // Convert DTO to Entity
     public AddressBook(AddressBookDTO dto) {
         this.name = dto.getName();
         this.phoneNumber = dto.getPhoneNumber();
